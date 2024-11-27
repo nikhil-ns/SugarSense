@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(images/home-image.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+nav{
+    height: 10vh;
+    max-width: 90vw;
+    border: 1px solid white;
+    margin: 0 auto;
+    padding: 1em 4em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1{
+    font-size: 2em;
+    color: white;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul a{
+    text-decoration: none;
+    color: white;
+    padding: 1.6rem 1.4rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+/* Hero section  */
+
+.hero{
+    min-height: 80vh;
+    width: 60vw;
+    /* border: 1px solid white; */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.content h2{
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.content button{
+    margin-top: 25px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 1em;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    outline: none;
+    cursor: pointer;
+}
+.content button a{
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    body{
+        font-size: 0.4em;
+    }
+    header{
+        width: 100dvw;
+        min-height: 100dvh;
+    }
+    nav{
+        max-width: 100dvw;
+        border: 1px solid blue;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 0 0;
+        padding: 1em;
+    }
+    nav ul{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        font-size: 1.5em;
+        gap: 0;
+    }
+    .content h2{
+        font-size: 2.8rem;
+    }
+  }
