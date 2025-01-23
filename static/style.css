@@ -11,7 +11,7 @@ html{
 header{
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(images/home-image.jpg);
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(Images/home-image.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -36,17 +36,32 @@ nav ul{
     display: flex;
     list-style: none;
     align-items: center;
+    gap: 4em;
 }
 
 nav ul a{
     text-decoration: none;
     color: white;
-    padding: 1.6rem 1.4rem;
+    /* padding: 1.6rem 1.4rem; */
     text-transform: uppercase;
     font-weight: 400;
     font-size: 1em;
+    position: relative;
 }
-
+nav ul li a::after {
+    content: "";
+    width: 0%;
+    height: 1.7px;
+    border-radius: 99px;
+    background: dodgerblue;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s ease;
+  }
+  nav ul li a:hover::after {
+    width: 100%;
+  }
 /* Hero section  */
 
 .hero{
@@ -69,6 +84,28 @@ nav ul a{
     color: white;
     font-size: 3rem;
     text-align: center;
+    /* -webkit-text-stroke: 1px black; */
+}
+.content h2 span{
+    background: linear-gradient(-45deg, #62cff4, #2c67f2);
+    background: linear-gradient(-45deg, #62cff4, #2c67f2, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    -webkit-text-stroke: 0.5px black;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rotate 2s ease infinite;
+}
+
+@keyframes rotate {
+    0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .content button{
@@ -99,21 +136,169 @@ nav ul a{
     }
     nav{
         max-width: 100dvw;
-        border: 1px solid blue;
+        border: 1px solid dodgerblue;
         display: flex;
         align-items: center;
         justify-content: space-around;
         margin: 0 0;
         padding: 1em;
     }
+    nav h1{
+        font-size: 2.5em;
+        color: white;
+    }
     nav ul{
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-        font-size: 1.5em;
-        gap: 0;
+        font-size: 1.8em;
+        gap: 10px;
+    }
+    .content h2 span{
+        font-size: 2.4rem;
     }
     .content h2{
-        font-size: 2.8rem;
+        font-size: 2rem;
+    }
+    form tr td{
+        font-size: 12px;
     }
   }
+
+/* Prediction page  */
+
+.prediction-header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(Images/prediction-image.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.prediction-form{
+    padding-top: 4em;
+    min-height: 80vh;
+    width: 50vw;
+    /* border: 1px solid white; */
+    margin: 0 auto;
+    display: flex;
+    color: white;
+    align-items: center;
+    flex-direction: column;
+}
+.prediction-form h1{
+    font-size: 30px;
+}
+
+.prediction-form form{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   /* border: 1px solid blue; */
+   padding: 2em;
+   min-height: 50vh;
+   /* background: white;
+   color: black; */
+}
+
+.prediction-form form div{
+    margin-top: 10px;
+    width: 100%;
+}
+
+.prediction-form form div label{
+    width: 100%;
+    padding-bottom: 2em;
+}
+
+.prediction-form form div input{
+    width: 100%;
+    padding: 0.5em;
+    background-color: rgb(151, 144, 144);
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    color: black;
+    font-weight: bold;
+}
+.prediction-form form div input:focus{
+    outline: none;
+
+}
+
+.btn{
+    margin: 15px 0px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 1em;
+    padding: 0.8rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    outline: none;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+form{
+    min-height: 300px;
+    min-width: 280px;
+    background-color: rgba(255,255,255,0.13);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+form h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 30px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+input:focus{
+    outline: 1px solid dodgerblue;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+
+.submitBtn{
+    cursor: pointer;
+}
+.backBtn{
+    color: white;
+}
+
+.resultArea{
+    
+}

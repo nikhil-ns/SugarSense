@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>Sugar Sense</title>
-    <style>
+    <!-- <style>
         body{
             background-image: url("{% static '\images\prediction-image.jpg'%}");
             background-repeat: no-repeat;
@@ -36,16 +36,29 @@
             cursor: pointer;
             margin-top: 20px;
         }
-    </style>
+    </style> -->
 </head>
 <body>
-    <div align="center" class="main">
-        <h1>Please Enter the following information</h1>
-        <form action="/predict/result/" method="get">
-            
-            <table>
-                <tr>
-                    <td align="right">Number of Pregnancies : </td>
+    <section class="prediction-header">
+        <nav>
+            <h1>Sugar Sense</h1>
+            <div class="links">
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="prediction-form">
+
+            <form action="/predict/result/" method="get">
+                
+                <table>
+                    <tr>
+                        <td align="right">Number of Pregnancies : </td>
                     <td align="left"><input type="text" name="pregnancies"></td>
                 </tr>
                 <tr>
@@ -77,12 +90,14 @@
                     <td align="left"><input type="text" name="age"></td>
                 </tr>
             </table>
-            <input type="submit">
+            <input type="submit" class="submitBtn">
+            <br>
+            <span class="resultArea">Result:{{result2}}</span> 
         </form>
-        Result:{{result2}}
         <br>
-        <a href = "{% url 'home' %}">Go back Home</a> 
+        <a href = "{% url 'home' %}" class="backBtn">Go back</a> 
     </div>
+</section>
 
 </body>
 </html>
